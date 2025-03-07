@@ -30,3 +30,11 @@ module "secure_vpc" {
 output "vpc_id" {
   value = module.secure_vpc.vpc_id
 }
+
+module "secure_iam" {
+  source = "../../modules/iam"
+}
+
+output "iam_role_arn" {
+  value = module.secure_iam.terraform_role_arn
+}
