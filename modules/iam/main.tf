@@ -44,3 +44,8 @@ resource "aws_iam_policy" "terraform_policy" {
     ]
   })
 }
+
+resource "aws_iam_role_policy_attachment" "terraform_attach" {
+  policy_arn = aws_iam_policy.terraform_policy.arn
+  role       = aws_iam_role.terraform_role.name
+}
